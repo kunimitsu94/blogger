@@ -6,7 +6,7 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -40,6 +40,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'sqlite3', '~> 1.4'
+  #moved to not conflict with heroku
 end
 
 group :test do
@@ -57,3 +59,18 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.5.0'
 
 gem 'jquery-rails'
+
+#auth
+gem 'devise'
+
+#devise forms
+gem 'simple_form'
+
+gem 'bootstrap-sass-extras', '~> 0.0.2'
+
+
+group :production do 
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'pg', '~> 1.2', '>= 1.2.3'
+end
+# for Heroku
